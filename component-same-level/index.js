@@ -27,4 +27,4 @@ new Vue({
       this.num = value;
     }
   }
-})
+});
