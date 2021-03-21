@@ -9,15 +9,26 @@
 </head>
 <body>
   <div id="app">
-    <div>
-      # router-link : 내부적으로 a tag 링크 생성
-      <router-link to="/login">Login</router-link>
-      <router-link to="/main">Main</router-link>
+    <h1>{{ num }}</h1>
+
+    <p v-bind:id="uuid" v-bind:class="name">
+      <h1>{{ doubleNum }}</h1>
+    </p>
+    <div v-if="flag">
+      Loading...
     </div>
-    <router-view></router-view>
+    <div v-else>
+      Finish!
+    </div>
+    <div v-show="flag">
+      what
+    </div>
+    <input type="text" v-model="message">
+    <p>{{ message }}</p>
   </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="./index.js" ></script>
 </body>
 </html>

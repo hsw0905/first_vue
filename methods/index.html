@@ -9,15 +9,10 @@
 </head>
 <body>
   <div id="app">
-    <div>
-      # router-link : 내부적으로 a tag 링크 생성
-      <router-link to="/login">Login</router-link>
-      <router-link to="/main">Main</router-link>
-    </div>
-    <router-view></router-view>
+    <button v-on:click="cook">click me</button>
+    <p>{{ num }}</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="./index.js" ></script>
 </body>
 </html>

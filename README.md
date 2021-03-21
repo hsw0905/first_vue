@@ -60,3 +60,49 @@ new Vue({
 - 상위 컴포넌트로 데이터를 올리고 상위 -> 하위 컴포넌트로 데이터를 내려줘야 함
 - 하위 -> 상위 (이벤트 전달) -> 하위 (props 전달)
 
+### Vue-Router
+- vue scipt 외에 router 스크립트 하나 더 필요
+```html
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+```
+- 라우터 연결
+```javascript
+const vm = new Vue({
+  el: '#app',
+  router: router
+});
+```
+- router-view : 마치 백엔드 코딩할때 url 라우팅 기능 처럼 path 하나당 컴포넌트 하나로 바로 보여줌
+```javascript
+const LoginComponent = {
+  template: '<div>login</div>'
+}
+const MainComponent = {
+  template: '<div>main</div>'
+}
+
+const router = new VueRouter({
+  routes: [
+    {
+      path:'/login',
+      // component's' 가 아니다 (path 하나당 한가지 컴포넌트 라우팅)
+      component: LoginComponent,
+    },
+    {
+      path:'/main',
+      component: MainComponent,
+    },
+  ]
+});
+```  
+- router-link : 사용자는 url을 직접 치고 오지 않고 링크로 들어옴(내부적으로 a tag)
+```html
+<div id="app">
+    <div>
+      # router-link : 내부적으로 a tag 링크 생성
+      <router-link to="/login">Login</router-link>
+      <router-link to="/main">Main</router-link>
+    </div>
+    <router-view></router-view>
+  </div>
+```
